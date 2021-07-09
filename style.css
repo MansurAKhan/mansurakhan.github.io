@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6, p, pre{
     height: 100px;
     position: absolute;
     top: 290px;
-    left: 1000px;
+    left: 100%;
     animation-delay: 2s;
     animation: potato 7s infinite linear;
     z-index: 3;
