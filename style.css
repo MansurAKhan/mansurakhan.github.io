@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6, p, pre{
 }
 
 @keyframes potato{
-    0%{left:100%;}
+    0%{left:90%;}
     100%{left:-40px;}
 }
 
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5, h6, p, pre{
     animation: block 4s infinite linear;
 }
 @keyframes block{
-    0%{left:100%;}
+    0%{left: 90%;}
     100%{left:-40px;}
 }
 
