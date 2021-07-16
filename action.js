@@ -46,7 +46,7 @@ function count_decrease(){
 function jump(){
     if(character.classList != "animate"){
     character.classList.add("animate");
-    document.getElementById("mariolook").src=JumpSkin;
+    document.getElementById("mariolook").src="JumpingMario.png";
     character.style.width="60px"
 
     }
@@ -74,7 +74,7 @@ function wait(ms){
 
 
 function person_falldown(){
-    document.getElementById("mariolook").src=HurtSkin
+    document.getElementById("mariolook").src="hurtmario.png"
     character.style.top="320px"
     character.style.width="375px"
     character.style.height="38px"
