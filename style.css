@@ -20,6 +20,15 @@ h1, h2, h3, h4, h5, h6, p, pre{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.skin-change{
+    color: snow;
+    height: 50px;
+    width: 100px;
+}
+
+#Luigi-Skin{
+    background-color: rgb(26, 135, 81);
+}
 
 #BackPic{
     width: 100%;
