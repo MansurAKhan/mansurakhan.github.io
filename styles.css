@@ -1,0 +1,271 @@
+:root {
+  --white: #fefefe;
+  --blue: #2e4152;
+  --gold: #fec758;
+  --text-dark: #000000;
+  --text-light: #fefefe;
+  --border: #d7dbe0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", Arial, sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  gap: 1rem;
+}
+
+.brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  background: var(--blue);
+  color: var(--text-light);
+}
+
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--blue);
+  background: transparent;
+  color: var(--blue);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  font: inherit;
+}
+
+.section,
+.hero {
+  padding: 4rem 0;
+}
+
+.hero h1,
+.section h1 {
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.hero p,
+.lead {
+  max-width: 70ch;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.blue-bg {
+  background: var(--blue);
+  color: var(--text-light);
+}
+
+.blue-bg h1,
+.blue-bg h2,
+.blue-bg h3 {
+  color: var(--gold);
+}
+
+.white-bg {
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.highlight-card {
+  background: rgba(254, 254, 254, 0.08);
+  border: 1px solid rgba(254, 254, 254, 0.2);
+  border-radius: 16px;
+  padding: 1.2rem;
+}
+
+.highlight-card a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.btn-row {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--text-dark);
+}
+
+.btn-outline {
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.btn-blue {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.card a.btn-blue {
+  color: var(--white);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.single-column {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem;
+  background: var(--white);
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+  color: var(--blue);
+}
+
+.card a {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.bibtex-details {
+  margin-top: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 0.8rem;
+  background: #f7f9fb;
+}
+
+.bibtex-details summary {
+  cursor: pointer;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.bibtex-details pre {
+  margin: 0.7rem 0 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.92rem;
+}
+
+.site-footer {
+  padding: 1.2rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 880px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .main-nav {
+    position: absolute;
+    right: 4%;
+    top: 66px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.6rem;
+    display: none;
+    flex-direction: column;
+    min-width: 170px;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+}
