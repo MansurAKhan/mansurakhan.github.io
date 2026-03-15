@@ -362,21 +362,22 @@ a {
 
 .policy-media-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(220px, 0.7fr);
+  grid-template-columns: minmax(460px, 560px) minmax(260px, 1fr);
   gap: 1.15rem;
   align-items: start;
   margin-top: 1rem;
 }
 
 .policy-video {
-  width: min(100%, 560px);
+  width: 100%;
+  max-width: 560px;
   display: block;
   justify-self: start;
   border-radius: 14px;
   border: 1px solid rgba(58, 123, 213, 0.22);
   background: var(--panel-deep);
   aspect-ratio: 16 / 9;
-  min-height: 220px;
+  min-height: 315px;
 }
 
 .policy-hearing-meta {
@@ -384,6 +385,11 @@ a {
   gap: 0.45rem;
   margin-top: 0;
   align-content: start;
+}
+
+.policy-hearing-meta .btn {
+  margin-top: 0.8rem;
+  justify-self: start;
 }
 
 .research-card {
@@ -479,12 +485,18 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .hero h1 {
+    max-width: 14ch;
+  }
+}
+
+@media (max-width: 760px) {
   .policy-media-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    max-width: 14ch;
+  .policy-video {
+    min-height: 220px;
   }
 }
 
