@@ -462,6 +462,38 @@ a {
   color: var(--text);
 }
 
+.coverage-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.coverage-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem 1rem;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(180deg, rgba(19, 31, 51, 0.98), rgba(11, 20, 34, 0.98));
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+}
+
+.coverage-list a {
+  font-weight: 500;
+}
+
+.coverage-source {
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
 .site-footer {
   padding: 1.4rem 0 2.8rem;
 }
@@ -484,9 +516,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    max-width: 14ch;
-  }
 }
 
 @media (max-width: 760px) {
