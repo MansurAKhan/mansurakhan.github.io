@@ -121,7 +121,6 @@ export function renderBanner(knowledge) {
   let html = '<div class="banner">';
   html += `<div class="title">Mansur.ai v1.13</div>`;
   html += `<div class="subtitle">${about.tagline}</div>`;
-  html += `<p>Hello. I'm Mansur.ai, a digital twin of Mansur Ali Khan. I can help answer questions about Mansur's background, research, projects, and policy work in AI and governance. You can also use the commands above to get some quick info.</p>`;
   html += "</div>";
   html += '<div class="section-title">Available Commands</div>';
   html += '<ul class="cmd-list">';
@@ -129,5 +128,6 @@ export function renderBanner(knowledge) {
     html += `<li><span class="cmd">${cmd.trigger}</span> ${cmd.description}</li>`;
   }
   html += "</ul>";
+  html += `<p>Hello. I'm Mansur.ai, a digital twin of Mansur Ali Khan. I can help answer questions about Mansur's background, research, projects, and policy work in AI and governance. You can also use the commands above to get some quick info.</p>`;
   return html;
 }
