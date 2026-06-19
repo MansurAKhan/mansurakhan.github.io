@@ -97,10 +97,6 @@ html, body {
   color: var(--text);
 }
 
-.line.response p {
-  margin: 0.15rem 0;
-}
-
 .line.response a {
   color: var(--accent);
   text-decoration: underline;
@@ -128,12 +124,7 @@ html, body {
 }
 
 .line.response ul, .line.response ol {
-  margin: 0.1rem 0;
   padding-left: 1.2rem;
-}
-
-.line.response li {
-  margin-bottom: 0.05rem;
 }
 
 .line.error {
@@ -149,10 +140,6 @@ html, body {
   opacity: 0.5;
 }
 
-.banner {
-  margin-bottom: 1rem;
-}
-
 .banner .title {
   color: var(--accent);
 }
@@ -162,7 +149,6 @@ html, body {
 }
 
 .cmd-list {
-  margin: 0.5rem 0 0 0;
   padding: 0;
   list-style: none;
 }
@@ -170,7 +156,6 @@ html, body {
 .cmd-list li {
   display: flex;
   gap: 1.2rem;
-  margin-bottom: 0.2rem;
   color: var(--text-dim);
 }
 
@@ -179,21 +164,8 @@ html, body {
   min-width: 9em;
 }
 
-.response .section-title {
-  margin-top: 0.6rem;
-  margin-bottom: 0.2rem;
-}
-
-.response .entry {
-  margin-bottom: 0.6rem;
-}
-
 .response .entry .meta {
   color: var(--text-dim);
-}
-
-.response .entry .links {
-  margin-top: 0.2rem;
 }
 
 .response .entry .links a {

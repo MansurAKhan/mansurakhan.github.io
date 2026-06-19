@@ -30,9 +30,9 @@ export function renderAbout(knowledge) {
   const { about } = knowledge;
   let html = `<div class="section-title">${about.name}</div>`;
   html += `<div class="entry">`;
-  html += `<div class="meta">${about.tagline}</div>`;
-  html += `<p>${about.bio}</p>`;
-  html += `<div class="meta" style="margin-top:0.4rem">Areas: ${about.tags.join(" · ")}</div>`;
+   html += `<div class="meta">${about.tagline}</div>`;
+   html += `<p>${about.bio}</p>`;
+   html += `<div class="meta">Areas: ${about.tags.join(" · ")}</div>`;
   html += `<div class="links">`;
   html += `<a href="${about.links.linkedin}" target="_blank">LinkedIn ↗</a>`;
   html += `</div>`;
@@ -53,9 +53,9 @@ export function renderResearch(knowledge) {
     if (p.links.neurips) html += `<a href="${p.links.neurips}" target="_blank">NeurIPS ↗</a>`;
     html += `</div>`;
     if (p.bibtex) {
-      html += `<details style="margin-top:0.3rem;font-size:0.85em">`;
+      html += `<details>`;
       html += `<summary style="cursor:pointer;color:var(--text-dim)">.bibtex</summary>`;
-      html += `<pre style="margin:0.3rem 0 0;background:var(--surface-deep);padding:0.4rem;border-radius:4px;font-size:0.85em">${p.bibtex}</pre>`;
+      html += `<pre>${p.bibtex}</pre>`;
       html += `</details>`;
     }
     html += `</div>`;
@@ -69,7 +69,7 @@ export function renderProjects(knowledge) {
     html += `<div class="entry">`;
     html += `<div class="title">${p.name}</div>`;
     html += `<div class="meta">${p.type}</div>`;
-    html += `<p style="margin:0.2rem 0">${p.description}</p>`;
+    html += `<p>${p.description}</p>`;
     html += `<div class="links">`;
     for (const [label, url] of Object.entries(p.links)) {
       html += `<a href="${url}" target="_blank">${label} ↗</a>`;
