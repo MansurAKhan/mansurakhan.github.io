@@ -110,7 +110,8 @@ export function renderContact(knowledge) {
   let html = '<div class="section-title">Contact</div>';
   html += `<div class="entry">`;
   html += `<div class="meta">Email: <a href="mailto:${about.links.email}">${about.links.email}</a></div>`;
-  html += `<div class="meta">LinkedIn: <a href="${about.links.linkedin}" target="_blank">linkedin.com/in/mansur-ali-khan ↗</a></div>`;
+  const linkedinShort = new URL(about.links.linkedin).pathname;
+html += `<div class="meta">LinkedIn: <a href="${about.links.linkedin}" target="_blank">${linkedinShort} ↗</a></div>`;
   html += `</div>`;
   return html;
 }
