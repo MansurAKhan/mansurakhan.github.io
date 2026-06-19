@@ -1,114 +1,35 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mansur Ali Khan | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mansur.ai ~ Terminal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-  <script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-home">
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html">Mansur Ali Khan</a>
-      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
-      <nav id="mainNav" class="main-nav">
-        <a class="active" href="index.html">Home</a>
-        <a href="policy.html">Policy</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
-          <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-      </nav>
+<body>
+  <div id="terminal">
+    <div id="output"></div>
+    <div id="input-line">
+      <span id="prompt">mansur.ai:~$</span>
+      <input type="text" id="input" autofocus spellcheck="false" autocomplete="off" />
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="hero blue-bg">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <h1>Bridging AI Research and Governance</h1>
-          <p>
-            Incoming 2nd year at University of Washington with technical grounding in artificial intelligence and a strong interest in democratic governance.
-            Demonstrated ability to translate complex AI research into legislative insights, civic strategy, and public discourse.
-            Active in international AI research communities and in local and state civic forums.
-          </p>
-          <div class="hero-meta">
-            <span>AI Research</span>
-            <span>Policy Communication</span>
-            <span>Civic Strategy</span>
-          </div>
-          <div class="btn-row">
-            <a class="btn btn-gold" href="Jan2Resume.pdf" download>Download Resume</a>
-            <a class="btn btn-outline" href="https://www.linkedin.com/in/mansur-ali-khan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </div>
-        </div>
-        <aside class="highlight-card">
-          <p class="kicker">Latest Publication</p>
-          <h2>Position: Bridge the Gaps between AI Development and Regulation</h2>
-          <p>Spotlight position paper accepted to the ICML 2026 Position Track.</p>
-          <a href="https://openreview.net/forum?id=1WYrzYfzVU" target="_blank" rel="noopener noreferrer">Read on OpenReview</a>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section white-bg">
-      <div class="container">
-        <h2>Quick Links</h2>
-        <div class="card-grid">
-          <article class="card">
-            <p class="kicker">Policy</p>
-            <h3>Policy Work</h3>
-            <p>View legislative testimony and policy-focused materials.</p>
-            <a href="policy.html">Go to Policy page</a>
-          </article>
-          <article class="card">
-            <p class="kicker">Research</p>
-            <h3>Research</h3>
-            <p>Access papers, PDFs, venue links.</p>
-            <a href="research.html">Go to Research page</a>
-          </article>
-          <article class="card">
-            <p class="kicker">Projects</p>
-            <h3>Projects</h3>
-            <p>Explore live AI tools and product builds.</p>
-            <a href="projects.html">Go to Projects page</a>
-          </article>
-          <article class="card">
-            <p class="kicker">Profile</p>
-            <h3>Professional Profile</h3>
-            <p>Connect and follow updates on LinkedIn.</p>
-            <a href="https://www.linkedin.com/in/mansur-ali-khan/" target="_blank" rel="noopener noreferrer">Open LinkedIn</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section blue-bg">
-      <div class="container">
-        <h2>Coverage</h2>
-        <ul class="coverage-list">
-          <li>
-            <a href="https://sammamishindependent.com/2026/01/skyline-student-presents-research-at-international-ai-conference/" target="_blank" rel="noopener noreferrer">Skyline student presents research at international AI conference</a>
-            <span class="coverage-source">Sammamish Independent</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer blue-bg">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Mansur Ali Khan</p>
-      <p>Built with HTML, CSS, and JavaScript</p>
+  <div id="key-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>🔑 API Key Required</h2>
+      <p>Enter your Groq API key to start chatting with Mansur.ai.</p>
+      <p class="hint">Your key is stored locally in your browser and never sent anywhere except Groq's API.</p>
+      <input type="password" id="key-input" placeholder="gsk_..." spellcheck="false" autocomplete="off" />
+      <button id="key-submit">Connect</button>
+      <p class="error" id="key-error"></p>
     </div>
-  </footer>
+  </div>
 
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

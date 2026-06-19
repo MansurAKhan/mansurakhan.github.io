@@ -1,1 +1,6 @@
 .DS_Store
+backup-*.zip
+backup-*/
+.claude/
+.playwright-mcp/
+.vscode/

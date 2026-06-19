@@ -1,0 +1,32 @@
+[
+  {
+    "trigger": "/about",
+    "description": "Show bio, background, and contact links",
+    "handler": "renderAbout"
+  },
+  {
+    "trigger": "/research",
+    "description": "List publications with links and BibTeX citations",
+    "handler": "renderResearch"
+  },
+  {
+    "trigger": "/projects",
+    "description": "Show live builds and repositories",
+    "handler": "renderProjects"
+  },
+  {
+    "trigger": "/civic",
+    "description": "Policy work, testimony, and hearing details",
+    "handler": "renderCivic"
+  },
+  {
+    "trigger": "/help",
+    "description": "Show all available commands",
+    "handler": "renderHelp"
+  },
+  {
+    "trigger": "/clear",
+    "description": "Clear terminal history",
+    "handler": "clearHistory"
+  }
+]

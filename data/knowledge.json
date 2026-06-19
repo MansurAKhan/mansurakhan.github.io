@@ -1,0 +1,87 @@
+{
+  "about": {
+    "name": "Mansur Ali Khan",
+    "tagline": "Bridging AI Research and Governance",
+    "bio": "IB Diploma student with technical grounding in artificial intelligence and a strong interest in democratic governance. Demonstrated ability to translate complex AI research into legislative insights, civic strategy, and public discourse. Active in international AI research communities and in local and state civic forums.",
+    "tags": ["AI Research", "Policy Communication", "Civic Strategy"],
+    "links": {
+      "resume": "Jan2Resume.pdf",
+      "linkedin": "https://www.linkedin.com/in/mansur-ali-khan/"
+    }
+  },
+  "research": [
+    {
+      "title": "Position: Bridge the Gaps between AI Development and Regulation",
+      "type": "Spotlight Position Paper",
+      "venue": "ICML 2026 Position Track",
+      "year": 2026,
+      "month": "April",
+      "authors": ["Mansur Ali Khan", "Mehmet Efe Akengin", "Osman Salahuddin", "Ahmad A Rushdi"],
+      "links": {
+        "openreview": "https://openreview.net/forum?id=1WYrzYfzVU",
+        "pdf": "https://openreview.net/pdf?id=1WYrzYfzVU"
+      },
+      "bibtex": "@inproceedings{\n  khan2026position,\n  title={Position: Bridge the Gaps between {AI} Development and Regulation},\n  author={Mansur Ali Khan and Mehmet Efe Akengin and Osman Salahuddin and Ahmad A Rushdi},\n  booktitle={ICML 2026 Position Track},\n  year={2026},\n  url={https://openreview.net/forum?id=1WYrzYfzVU}\n}"
+    },
+    {
+      "title": "From Proposals to Enactment: The Procedural Bottleneck in AI Safety Regulation",
+      "type": "Paper",
+      "venue": "RegML Workshop - NeurIPS 2025",
+      "year": 2025,
+      "month": "September",
+      "authors": ["Mansur Ali Khan", "Mehmet Efe Akengin", "Ahmad A Rushdi"],
+      "links": {
+        "openreview": "https://openreview.net/forum?id=OCn2y7QDTB",
+        "pdf": "https://openreview.net/pdf?id=OCn2y7QDTB",
+        "neurips": "https://neurips.cc/virtual/2025/loc/san-diego/130224"
+      },
+      "bibtex": "@inproceedings{\n  khan2025from,\n  title={From Proposals to Enactment: The Procedural Bottleneck in {AI} Safety Regulation},\n  author={Mansur Ali Khan and Mehmet Efe Akengin and Ahmad A Rushdi},\n  booktitle={NeurIPS 2025 Workshop on Regulatable ML},\n  year={2025},\n  url={https://openreview.net/forum?id=OCn2y7QDTB}\n}"
+    },
+    {
+      "title": "Oscar: The Generative AI student assistant",
+      "type": "Paper",
+      "venue": "MusIML Workshop - NeurIPS 2024",
+      "year": 2024,
+      "month": "November",
+      "authors": ["Mansur Ali Khan", "Abdullah Khan"],
+      "links": {
+        "openreview": "https://openreview.net/forum?id=E9FPuJjcaG",
+        "pdf": "https://openreview.net/pdf?id=E9FPuJjcaG",
+        "neurips": "https://neurips.cc/virtual/2024/109154"
+      },
+      "bibtex": "@inproceedings{\n  khan2024oscar,\n  title={Oscar: The Generative {AI} student assistant},\n  author={Mansur Ali Khan and Abdullah Khan},\n  booktitle={Muslims in ML Workshop co-located with NeurIPS 2024},\n  year={2024},\n  url={https://openreview.net/forum?id=E9FPuJjcaG}\n}"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Ethical AI Chatbot - PlugGPT",
+      "type": "Live build • Public demo • AI product prototype",
+      "description": "A live chatbot project focused on ethical AI interaction and public-facing product design.",
+      "links": {
+        "live": "https://mansurakhan.github.io/plug-gpt"
+      }
+    },
+    {
+      "name": "Legislative Bottleneck Dashboard",
+      "type": "GitHub repository • Policy analytics • Dashboard project",
+      "description": "A repository for the Legislative Bottleneck Dashboard project focused on AI policy analysis and legislative process data.",
+      "links": {
+        "github": "https://github.com/MansurAKhan/Legislative-Bottleneck-Dashboard"
+      }
+    }
+  ],
+  "civic": {
+    "testimony": {
+      "title": "SB 5984 Testimony",
+      "hearing_body": "House Technology, Economic Development, & Veterans",
+      "date": "February 20, 10:30 am",
+      "bill": "ESSB 5984",
+      "video": "https://www.youtube.com/embed/TuLaVNf_Ej4?si=9DZX_VPjr6mwvEHt",
+      "pdf": "Khan - SB 5984 Testimony.pdf",
+      "full_hearing": "https://tvw.org/video/house-technology-economic-development-veterans-2026021286/"
+    },
+    "contact": {
+      "linkedin": "https://www.linkedin.com/in/mansur-ali-khan/"
+    }
+  }
+}
