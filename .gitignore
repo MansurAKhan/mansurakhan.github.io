@@ -7,4 +7,5 @@ backup-*/
 .env
 __pycache__/
 *.pyc
+supabase/.temp/
 
