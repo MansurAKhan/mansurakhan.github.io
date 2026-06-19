@@ -1,4 +1,4 @@
-const API_BASE = "https://mansur-ai-api.onrender.com";
+const SUPABASE_URL = "https://YOUR_PROJECT_REF.supabase.co/functions/v1/chat";
 
 let abortController = null;
 
@@ -14,7 +14,7 @@ export async function streamChat(messages, onToken, onDone, onError) {
   abortController = new AbortController();
 
   try {
-    const resp = await fetch(`${API_BASE}/api/chat`, {
+    const resp = await fetch(SUPABASE_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages }),
@@ -23,7 +23,7 @@ export async function streamChat(messages, onToken, onDone, onError) {
 
     if (!resp.ok) {
       const err = await resp.json().catch(() => ({}));
-      throw new Error(err.detail || `Server error: ${resp.status}`);
+      throw new Error(err.error || `Server error: ${resp.status}`);
     }
 
     const reader = resp.body.getReader();
