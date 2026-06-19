@@ -1,6 +1,14 @@
 const GROQ_API_BASE = "https://api.groq.com/openai/v1/chat/completions";
+const ALLOWED_ORIGIN = "mansurakhan.github.io";
 
 let abortController = null;
+
+function checkOrigin() {
+  const host = window.location.hostname;
+  if (host !== ALLOWED_ORIGIN && host !== "localhost" && host !== "127.0.0.1") {
+    throw new Error("This API key is restricted to mansurakhan.github.io");
+  }
+}
 
 export function cancelStream() {
   if (abortController) {
@@ -14,6 +22,7 @@ export async function streamChat(apiKey, messages, onToken, onDone, onError) {
   abortController = new AbortController();
 
   try {
+    checkOrigin();
     const resp = await fetch(GROQ_API_BASE, {
       method: "POST",
       headers: {

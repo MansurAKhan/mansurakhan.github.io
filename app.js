@@ -26,7 +26,7 @@ async function init() {
   }
 
   if (!Storage.getApiKey()) {
-    UI.showModal();
+    Storage.setApiKey("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");
   }
 
   renderBanner();
@@ -180,5 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       document.getElementById("key-submit").click();
     }
+  });
+
+  window.addEventListener("beforeunload", () => {
+    Storage.clearHistory();
   });
 });
