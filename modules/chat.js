@@ -1,4 +1,4 @@
-const SUPABASE_URL = "https://YOUR_PROJECT_REF.supabase.co/functions/v1/chat";
+const SUPABASE_URL = "https://vxrlsdptvprzhqdaugdi.supabase.co/functions/v1/chat";
 
 let abortController = null;
 
