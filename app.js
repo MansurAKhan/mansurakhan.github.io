@@ -25,10 +25,6 @@ async function init() {
     return;
   }
 
-  if (!Storage.getApiKey()) {
-    Storage.setApiKey("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");
-  }
-
   renderBanner();
 
   const history = Storage.getHistory();
@@ -88,13 +84,6 @@ function clearTerminal() {
 }
 
 async function handleChat(userMessage) {
-  const apiKey = Storage.getApiKey();
-  if (!apiKey) {
-    UI.showModal();
-    return;
-  }
-
-  const lines = [];
   const lineDiv = UI.addLine("response", "");
   lineDiv.classList.add("typing-cursor");
 
@@ -107,7 +96,6 @@ async function handleChat(userMessage) {
   let fullResponse = "";
 
   Chat.streamChat(
-    apiKey,
     messages,
     (token) => {
       fullResponse += token;
@@ -160,25 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Enter") {
       e.preventDefault();
       onSubmit();
-    }
-  });
-
-  document.getElementById("key-submit").addEventListener("click", () => {
-    const key = UI.getKeyInput();
-    if (!key || !key.startsWith("gsk_")) {
-      UI.showModalError("Invalid API key. Must start with 'gsk_'.");
-      return;
-    }
-    Storage.setApiKey(key);
-    UI.hideModal();
-    UI.clearKeyInput();
-    UI.addLine("system", "Connected to Groq API. Start chatting!");
-  });
-
-  document.getElementById("key-input").addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      document.getElementById("key-submit").click();
     }
   });
 

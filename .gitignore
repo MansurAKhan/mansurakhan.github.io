@@ -4,3 +4,7 @@ backup-*/
 .claude/
 .playwright-mcp/
 .vscode/
+.env
+__pycache__/
+*.pyc
+

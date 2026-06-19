@@ -1,14 +1,6 @@
-const GROQ_API_BASE = "https://api.groq.com/openai/v1/chat/completions";
-const ALLOWED_ORIGIN = "mansurakhan.github.io";
+const API_BASE = "https://mansur-ai-api.onrender.com";
 
 let abortController = null;
-
-function checkOrigin() {
-  const host = window.location.hostname;
-  if (host !== ALLOWED_ORIGIN && host !== "localhost" && host !== "127.0.0.1") {
-    throw new Error("This API key is restricted to mansurakhan.github.io");
-  }
-}
 
 export function cancelStream() {
   if (abortController) {
@@ -17,31 +9,21 @@ export function cancelStream() {
   }
 }
 
-export async function streamChat(apiKey, messages, onToken, onDone, onError) {
+export async function streamChat(messages, onToken, onDone, onError) {
   cancelStream();
   abortController = new AbortController();
 
   try {
-    checkOrigin();
-    const resp = await fetch(GROQ_API_BASE, {
+    const resp = await fetch(`${API_BASE}/api/chat`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
-        messages,
-        stream: true,
-        temperature: 0.7,
-        max_tokens: 2048,
-      }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages }),
       signal: abortController.signal,
     });
 
     if (!resp.ok) {
       const err = await resp.json().catch(() => ({}));
-      throw new Error(err.error?.message || `API error: ${resp.status}`);
+      throw new Error(err.detail || `Server error: ${resp.status}`);
     }
 
     const reader = resp.body.getReader();
@@ -60,14 +42,17 @@ export async function streamChat(apiKey, messages, onToken, onDone, onError) {
         const trimmed = line.trim();
         if (!trimmed || !trimmed.startsWith("data: ")) continue;
         const data = trimmed.slice(6);
-        if (data === "[DONE]") break;
 
         try {
           const parsed = JSON.parse(data);
+          if (parsed.error) {
+            onError(parsed.error);
+            return;
+          }
           const content = parsed.choices?.[0]?.delta?.content || "";
           if (content) onToken(content);
         } catch {
-          // skip malformed chunks
+          // skip
         }
       }
     }
