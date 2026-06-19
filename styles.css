@@ -50,7 +50,6 @@ html, body {
 }
 #output::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 3px;
 }
 
 #input-line {
@@ -114,17 +113,13 @@ html, body {
 .line.response code {
   background: var(--surface-deep);
   padding: 0.1rem 0.35rem;
-  border-radius: 4px;
-  font-size: 0.9em;
 }
 
 .line.response pre {
   background: var(--surface-deep);
   border: 1px solid var(--border);
-  border-radius: 6px;
   padding: 0.6rem 0.8rem;
   overflow-x: auto;
-  font-size: 0.85em;
 }
 
 .line.response pre code {
@@ -151,25 +146,19 @@ html, body {
 
 .line.timestamp {
   color: var(--text-dim);
-  font-size: 0.7em;
   opacity: 0.5;
 }
 
 .banner {
   margin-bottom: 1rem;
-  line-height: 1.2;
 }
 
 .banner .title {
   color: var(--accent);
-  font-weight: 500;
-  font-size: 1.3em;
 }
 
 .banner .subtitle {
   color: var(--text-dim);
-  font-size: 0.85em;
-  margin-top: 0.3rem;
 }
 
 .cmd-list {
@@ -183,7 +172,6 @@ html, body {
   gap: 1.2rem;
   margin-bottom: 0.2rem;
   color: var(--text-dim);
-  font-size: 0.9em;
 }
 
 .cmd-list li .cmd {
@@ -192,24 +180,16 @@ html, body {
 }
 
 .response .section-title {
-  font-weight: 500;
   margin-top: 0.6rem;
   margin-bottom: 0.2rem;
 }
 
 .response .entry {
   margin-bottom: 0.6rem;
-  padding-left: 0.5rem;
-  border-left: 2px solid var(--border);
-}
-
-.response .entry .title {
-  font-weight: 500;
 }
 
 .response .entry .meta {
   color: var(--text-dim);
-  font-size: 0.85em;
 }
 
 .response .entry .links {
@@ -219,7 +199,6 @@ html, body {
 .response .entry .links a {
   display: inline-block;
   margin-right: 0.6rem;
-  font-size: 0.85em;
 }
 
 .typing-cursor::after {
@@ -249,68 +228,9 @@ html, body {
 .modal-content {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
   padding: 2rem;
   max-width: 420px;
   width: 90%;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8);
-}
-
-.modal-content h2 {
-  margin: 0 0 0.6rem;
-  font-size: 1.3rem;
-  color: var(--accent);
-}
-
-.modal-content p {
-  margin: 0 0 0.8rem;
-  font-size: 0.9rem;
-  color: var(--text-dim);
-  line-height: 1.5;
-}
-
-.modal-content .hint {
-  font-size: 0.8rem;
-  opacity: 0.7;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 0.6rem 0.8rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font: inherit;
-  font-size: 0.9rem;
-  outline: none;
-  margin-bottom: 0.8rem;
-}
-
-.modal-content input:focus {
-  border-color: var(--accent);
-}
-
-.modal-content button {
-  padding: 0.6rem 1.2rem;
-  background: var(--accent);
-  color: #000000;
-  border: none;
-  border-radius: 8px;
-  font: inherit;
-  font-weight: 500;
-  cursor: pointer;
-  transition: opacity 150ms;
-}
-
-.modal-content button:hover {
-  opacity: 0.85;
-}
-
-.modal-content .error {
-  color: var(--error);
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
 }
 
 @media (max-width: 700px) {

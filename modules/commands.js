@@ -108,7 +108,7 @@ export function renderCivic(knowledge) {
 export function renderBanner(knowledge) {
   const { about } = knowledge;
   let html = '<div class="banner">';
-  html += `<div class="title">▌ Mansur.ai v1.13</div>`;
+  html += `<div class="title">Mansur.ai v1.13</div>`;
   html += `<div class="subtitle">${about.tagline}</div>`;
   html += `<div class="subtitle">Ask me anything about Mansur's work or use a command below.</div>`;
   html += "</div>";
