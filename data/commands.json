@@ -25,6 +25,11 @@
     "handler": "renderHelp"
   },
   {
+    "trigger": "/contact",
+    "description": "Email and LinkedIn contact info",
+    "handler": "renderContact"
+  },
+  {
     "trigger": "/clear",
     "description": "Clear terminal history",
     "handler": "clearHistory"

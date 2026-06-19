@@ -105,6 +105,16 @@ export function renderCivic(knowledge) {
   return html;
 }
 
+export function renderContact(knowledge) {
+  const { about } = knowledge;
+  let html = '<div class="section-title">Contact</div>';
+  html += `<div class="entry">`;
+  html += `<div class="meta">Email: <a href="mailto:${about.links.email}">${about.links.email}</a></div>`;
+  html += `<div class="meta">LinkedIn: <a href="${about.links.linkedin}" target="_blank">linkedin.com/in/mansur-ali-khan ↗</a></div>`;
+  html += `</div>`;
+  return html;
+}
+
 export function renderBanner(knowledge) {
   const { about } = knowledge;
   let html = '<div class="banner">';

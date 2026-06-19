@@ -14,6 +14,7 @@ const COMMAND_RENDERERS = {
   renderResearch: (k) => Commands.renderResearch(k),
   renderProjects: (k) => Commands.renderProjects(k),
   renderCivic: (k) => Commands.renderCivic(k),
+  renderContact: (k) => Commands.renderContact(k),
 };
 
 async function init() {
