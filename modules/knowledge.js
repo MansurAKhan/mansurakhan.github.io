@@ -2,14 +2,20 @@ let knowledge = null;
 
 export async function loadKnowledge() {
   if (knowledge) return knowledge;
-  const resp = await fetch("data/knowledge.json");
+  const [resp, resumeResp] = await Promise.all([
+    fetch("data/knowledge.json"),
+    fetch("generalFullResume.tex").catch(() => null),
+  ]);
   if (!resp.ok) throw new Error("Failed to load knowledge base");
   knowledge = await resp.json();
+  if (resumeResp && resumeResp.ok) {
+    knowledge.resumeFull = await resumeResp.text();
+  }
   return knowledge;
 }
 
 export function buildSystemPrompt(knowledge) {
-  const { about, research, projects, civic } = knowledge;
+  const { about, research, projects, civic, talks } = knowledge;
 
   const papers = research.map((p, i) =>
     `  ${i + 1}. "${p.title}" — ${p.venue} (${p.year}). Authors: ${p.authors.join(", ")}. Links: ${Object.values(p.links).join(", ")}`
@@ -17,6 +23,10 @@ export function buildSystemPrompt(knowledge) {
 
   const projs = projects.map((p, i) =>
     `  ${i + 1}. "${p.name}" — ${p.description}. Links: ${Object.values(p.links).join(", ")}`
+  ).join("\n");
+
+  const talksList = (talks || []).map((t, i) =>
+    `  ${i + 1}. "${t.title}" — ${t.event}, ${t.venue} (${t.location}, ${t.date}). Format: ${t.format}${t.link ? ` Link: ${t.link}` : ""}${t.details ? ` ${t.details}` : ""}`
   ).join("\n");
 
   return `You are Mansur.ai, a helpful AI assistant with knowledge about Mansur Ali Khan. You answer questions about Mansur's background, research, projects, and policy work. Be concise, accurate, and helpful. Use the knowledge below to answer questions. If asked something you don't know, say so honestly. Do not pretend to be Mansur or speak as if you are him — you are an AI that knows about him.
@@ -29,8 +39,14 @@ Areas: ${about.tags.join(", ")}
 LinkedIn: ${about.links.linkedin}
 Resume: ${about.links.resume}
 
+FULL RESUME (LaTeX source, primary reference for Mansur's background):
+${knowledge.resumeFull || "(unavailable)"}
+
 RESEARCH PUBLICATIONS:
 ${papers}
+
+TALKS & CONFERENCE APPEARANCES:
+${talksList || "  (none recorded)"}
 
 PROJECTS:
 ${projs}

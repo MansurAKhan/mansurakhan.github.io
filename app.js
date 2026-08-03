@@ -48,21 +48,17 @@ function renderBanner() {
   const html = Commands.renderBanner(knowledge);
   UI.addLine("system", html);
 
-  const greeting = "Hello. I'm Mansur.ai, a digital twin of Mansur Ali Khan. I can help answer questions about Mansur's background, research, projects, and policy work in AI and governance. You can also use the commands above to get some quick info.";
+  const greeting = "Hello! I'm Mansur.ai, a digital twin of Mansur Ali Khan. I can help answer questions about Mansur's background, research, projects, and policy work in AI and governance. You can also use the commands above to get some quick info. Here is his resume";
   const line = UI.addLine("response", "");
   line.classList.add("typing-cursor");
-  let i = 0;
-  function type() {
-    if (i >= greeting.length) {
-      line.classList.remove("typing-cursor");
-      return;
-    }
-    line.innerHTML += greeting[i];
-    i++;
-    UI.scrollToBottom();
-    setTimeout(type, 12);
-  }
-  type();
+  UI.typewriter(line, greeting, 12, () => {
+    line.classList.remove("typing-cursor");
+    const resumeIdx = greeting.lastIndexOf("resume");
+    line.innerHTML =
+      greeting.slice(0, resumeIdx) +
+      `<a href="${knowledge.about.links.resume}" target="_blank">resume</a>` +
+      greeting.slice(resumeIdx + "resume".length);
+  });
 }
 
 function buildSystemMessage() {

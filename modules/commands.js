@@ -119,7 +119,7 @@ html += `<div class="meta">LinkedIn: <a href="${about.links.linkedin}" target="_
 export function renderBanner(knowledge) {
   const { about } = knowledge;
   let html = '<div class="banner">';
-  html += `<div class="title">Mansur.ai v1.13</div>`;
+  html += `<div class="title">Mansur.ai v1.16</div>`;
   html += `<div class="subtitle">${about.tagline}</div>`;
   html += "</div>";
   html += '<div class="section-title">Available Commands</div>';
