@@ -2,7 +2,7 @@
   "about": {
     "name": "Mansur Ali Khan",
     "tagline": "Bridging AI Research and Governance",
-    "bio": "IB Diploma student with technical grounding in artificial intelligence and a strong interest in democratic governance. Demonstrated ability to translate complex AI research into legislative insights, civic strategy, and public discourse. Active in international AI research communities and in local and state civic forums.",
+    "bio": "AI Policy Researcher and student of Law, Economics, & Public Policy at the University of Washington-Bothell. His research focuses on AI legislation topical and structural trends. He has worked with Washington state legislators on local AI legislation to bridge research with legislation. And is interested in studying coordination frameworks of AI governance to help make effective, implementable AI policies.",
     "tags": ["AI Research", "Policy Communication", "Civic Strategy"],
     "links": {
       "resume": "Resume_Aug3.pdf",
@@ -12,7 +12,7 @@
   },
   "research": [
     {
-      "title": "Position: Bridge the Gaps between AI Development and Regulation",
+      "title": "Position: Bridge the AI development-regulation gap through dedicated committees and adaptive legislation",
       "type": "Position Paper",
       "venue": "ICML 2026 Position Paper Track",
       "year": 2026,
@@ -22,7 +22,7 @@
         "openreview": "https://openreview.net/forum?id=1WYrzYfzVU",
         "pdf": "https://openreview.net/pdf?id=1WYrzYfzVU"
       },
-      "bibtex": "@inproceedings{\n  khan2026position,\n  title={Position: Bridge the Gaps between {AI} Development and Regulation},\n  author={Mansur Ali Khan and Mehmet Efe Akengin and Osman Salahuddin and Ahmad A Rushdi},\n  booktitle={ICML 2026 Position Paper Track},\n  year={2026},\n  url={https://openreview.net/forum?id=1WYrzYfzVU}\n}"
+      "bibtex": "@inproceedings{\n  khan2026position,\n  title={Position: Bridge the AI development-regulation gap through dedicated committees and adaptive legislation},\n  author={Mansur Ali Khan and Mehmet Efe Akengin and Osman Salahuddin and Ahmad A Rushdi},\n  booktitle={ICML 2026 Position Paper Track},\n  year={2026},\n  url={https://openreview.net/forum?id=1WYrzYfzVU}\n}"
     },
     {
       "title": "The Path to AI Governance: First Systematic Analysis of AI Governance Across 50 U.S. States",
