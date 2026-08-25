@@ -65,16 +65,17 @@ serve(async (req) => {
         messages,
         stream: true,
         temperature: 0.7,
-        max_tokens: 2048,
+        max_tokens: 1024,
       }),
     });
 
     if (!groqResp.ok) {
       const err = await groqResp.text();
+      const rateLimited = groqResp.status === 429 || /rate_limit_exceeded|rate limit|tokens per minute|TPM/i.test(err);
       return new Response(
-        JSON.stringify({ error: `Groq API error: ${err}` }),
+        JSON.stringify({ error: `Groq API error: ${err}`, rateLimited }),
         {
-          status: groqResp.status,
+          status: rateLimited ? 429 : groqResp.status,
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": corsOrigin,

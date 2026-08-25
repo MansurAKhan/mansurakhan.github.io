@@ -23,7 +23,9 @@ export async function streamChat(messages, onToken, onDone, onError) {
 
     if (!resp.ok) {
       const err = await resp.json().catch(() => ({}));
-      throw new Error(err.error || `Server error: ${resp.status}`);
+      const message = err.error || `Server error: ${resp.status}`;
+      const rateLimited = Boolean(err.rateLimited) || resp.status === 429 || /rate limit|rate_limit_exceeded|tokens per minute|TPM/i.test(message);
+      throw Object.assign(new Error(message), { rateLimited });
     }
 
     const reader = resp.body.getReader();

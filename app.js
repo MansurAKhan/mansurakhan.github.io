@@ -6,7 +6,7 @@ import * as UI from "./modules/ui.js";
 
 let knowledge = null;
 let chatHistory = [];
-const MAX_HISTORY = 20;
+const MAX_HISTORY = 6;
 
 const COMMAND_RENDERERS = {
   renderHelp: (k) => Commands.renderHelp(k),
@@ -96,8 +96,8 @@ function clearTerminal() {
 }
 
 async function handleChat(userMessage) {
-  const lineDiv = UI.addLine("response", "");
-  lineDiv.classList.add("typing-cursor");
+  const lineDiv = UI.addLine("response", "Thinking");
+  lineDiv.classList.add("thinking", "typing-cursor");
 
   const messages = [
     buildSystemMessage(),
@@ -110,13 +110,17 @@ async function handleChat(userMessage) {
   Chat.streamChat(
     messages,
     (token) => {
+      if (lineDiv.classList.contains("thinking")) {
+        lineDiv.classList.remove("thinking");
+        lineDiv.innerHTML = "";
+      }
       fullResponse += token;
       const rendered = UI.renderMarkdown(fullResponse);
       lineDiv.innerHTML = rendered;
       UI.scrollToBottom();
     },
     () => {
-      lineDiv.classList.remove("typing-cursor");
+      lineDiv.classList.remove("thinking", "typing-cursor");
       UI.scrollToBottom();
 
       Storage.addHistoryEntry({ role: "user", content: userMessage });
@@ -130,8 +134,9 @@ async function handleChat(userMessage) {
       }
     },
     (err) => {
-      lineDiv.classList.remove("typing-cursor");
-      lineDiv.innerHTML = `<span style="color:var(--error)">Error: ${err}</span>`;
+      lineDiv.classList.remove("thinking", "typing-cursor");
+      const prefix = err.rateLimited ? "Rate limit reached — please wait a few seconds and try again." : `Error: ${err.message || err}`;
+      lineDiv.innerHTML = `<span style="color:var(--error)">${prefix}</span>`;
     }
   );
 }
