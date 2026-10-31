@@ -173,6 +173,19 @@ html, body {
   margin-right: 0.6rem;
 }
 
+.response .entry .video {
+  margin: 0.6rem 0;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+}
+
+.response .entry .video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--border);
+}
+
 .typing-cursor::after {
   content: "█";
   animation: blink 1s step-end infinite;

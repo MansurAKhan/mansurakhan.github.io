@@ -35,7 +35,8 @@ async function init() {
       chatHistory.push({ role: "user", content: entry.content });
     } else if (entry.role === "assistant") {
       const line = UI.addLine("response", "");
-      line.innerHTML = UI.renderMarkdown(entry.content);
+      const renderer = entry.command ? COMMAND_RENDERERS[entry.command] : null;
+      line.innerHTML = renderer ? renderer(knowledge) : UI.renderMarkdown(entry.content);
       chatHistory.push({ role: "assistant", content: entry.content });
     }
   }
@@ -84,7 +85,11 @@ async function handleCommand(input) {
   if (renderer) {
     const html = renderer(knowledge);
     const line = UI.addLine("response", html);
-    Storage.addHistoryEntry({ role: "assistant", content: html.replace(/<[^>]*>/g, "") });
+    Storage.addHistoryEntry({
+      role: "assistant",
+      content: html.replace(/<[^>]*>/g, ""),
+      command: cmd.handler,
+    });
   }
 }
 
@@ -169,6 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("beforeunload", () => {
-    Storage.clearHistory();
+    Storage.clearChatHistory();
   });
 });

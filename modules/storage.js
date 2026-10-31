@@ -36,6 +36,14 @@ export function clearHistory() {
   save(data);
 }
 
+// Drops conversation entries but keeps rendered command output, so things like
+// the /civic hearing video survive a reload.
+export function clearChatHistory() {
+  const data = load() || {};
+  data.history = (data.history || []).filter((entry) => entry.command);
+  save(data);
+}
+
 export function getApiKey() {
   const data = load();
   return data?.apiKey ?? "";

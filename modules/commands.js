@@ -89,6 +89,17 @@ export function renderCivic(knowledge) {
   html += `<div class="meta">Bill: ${civic.testimony.bill}</div>`;
   html += `<div class="meta">Hearing: ${civic.testimony.hearing_body}</div>`;
   html += `<div class="meta">Date: ${civic.testimony.date}</div>`;
+  if (civic.testimony.video) {
+    html += `<div class="video">`;
+    html += `<iframe`;
+    html += ` src="${civic.testimony.video}"`;
+    html += ` title="${civic.testimony.title} YouTube video player"`;
+    html += ` allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"`;
+    html += ` referrerpolicy="strict-origin-when-cross-origin"`;
+    html += ` allowfullscreen`;
+    html += `></iframe>`;
+    html += `</div>`;
+  }
   html += `<div class="links">`;
   html += `<a href="${civic.testimony.full_hearing}" target="_blank">Full Hearing ↗</a>`;
   if (civic.testimony.pdf) {
